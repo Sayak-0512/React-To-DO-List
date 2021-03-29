@@ -1,13 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 
 
 function Todoitems(props){
-  const [state,setState]=useState(false);
-  function handleClick(){
-    setState(!state);
-  }
-  return (<div onClick={handleClick}>
-    {state===false?<li>{props.curListItem}</li>:<li style={{textDecoration: "line-through"}}>{props.curListItem}</li>}
+
+  return (<div onClick={() => (props.handleDelete(props.id))}>
+    <li>{props.curListItem}</li>
     </div>)
 }
 
